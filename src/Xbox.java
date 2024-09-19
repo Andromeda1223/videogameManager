@@ -10,9 +10,10 @@ public class Xbox implements Iconsola{
     }
 
     @Override
-    public void installGame() {
+    public void installGame(videojuego game) {
 
     }
+
 
     @Override
     public void playGame() {

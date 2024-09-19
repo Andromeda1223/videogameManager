@@ -10,7 +10,7 @@ public class Switch implements Iconsola{
     }
 
     @Override
-    public void installGame() {
+    public void installGame(videojuego game) {
 
     }
 

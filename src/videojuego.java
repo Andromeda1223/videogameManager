@@ -3,14 +3,14 @@ import java.util.Objects;
 
 public abstract class videojuego {
     public String titulo;
-    public String consola;
+    public Consolas consola;
     public double precio;
     public Generos genero;
 
 public void SetTitulo(String titulo) {
     this.titulo = titulo;
 }
-public void SetConsola(String consola) {
+public void SetConsola(Consolas consola) {
     this.consola = consola;
 }
 public void SetPrecio(double precio) {
@@ -34,7 +34,7 @@ public void SetGeneros(Generos generos) {
     }
 
     public abstract double calcularPrecio();
-public videojuego(String titulo, String consola, double precio, Generos genero) {
+public videojuego(String titulo, Consolas consola, double precio, Generos genero) {
     this.titulo = titulo;
     this.consola = consola;
     this.precio = precio;

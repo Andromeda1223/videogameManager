@@ -1,4 +1,9 @@
-public abstract class PlayStation implements Iconsola{
+import error.JuegoNoCompatible;
+
+import java.util.ArrayList;
+
+public class PlayStation implements Iconsola {
+    public ArrayList<videojuego> juegosInstalados = new ArrayList<>();
 
     @Override
     public void switchOn() {
@@ -12,8 +17,11 @@ public abstract class PlayStation implements Iconsola{
 
     @Override
     public void installGame(videojuego game) {
-        if (game.consola.equals("PS5")) {
-            System.out.println("INSTALANDO JUEGO");
+        if (game.consola == Consolas.PS5) {
+            System.out.println("INSTALANDO " + game.titulo + " PORFAVOR ESPERE");
+            juegosInstalados.add(game);
+        } else {
+            throw new JuegoNoCompatible();
         }
     }
 
@@ -26,4 +34,12 @@ public abstract class PlayStation implements Iconsola{
     public String getPlataforma() {
         return "PS5";
     }
+
+
+    public void juegosInstalados() {
+        for (videojuego game : juegosInstalados) {
+            System.out.println(game.titulo);
+        }
+    }
+
 }
