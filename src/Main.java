@@ -7,16 +7,25 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
+
+//Arrays generos
         List<Generos> generosTest1 = Arrays.asList(Generos.FPS, Generos.PLATAFORMA);
+//Arrays consolas
+        List<Consolas> consolasTest1 = Arrays.asList(Consolas.PS5, Consolas.SWITCH);
 
-        videojuegoFisico test1 = new videojuegoFisico("Test1", Consolas.PS5, 60, generosTest1);
+//Inicializar juegos
+        videojuegoFisico test1 = new videojuegoFisico("Test1", consolasTest1, 60, generosTest1);
 
 
-        System.out.println(test1);
+//Inicializar consolas
 
         PlayStation testConsola = new PlayStation();
-        testConsola.installGame(test1);
-        testConsola.juegosInstalados();
+        Xbox testConsola2 = new Xbox();
+
+//Pruebas y tests
+        System.out.println(test1);
+
+
     }
 
     ;

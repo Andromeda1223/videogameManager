@@ -19,7 +19,7 @@ public class Switch implements Iconsola{
 
     @Override
     public void installGame(videojuego game) {
-        if (game.consola == Consolas.PS5) {
+        if (game.consola.contains(Consolas.SWITCH)) {
             System.out.println("INSTALANDO " + game.titulo + " PORFAVOR ESPERE");
             juegosInstaladosSwitch.add(game);
         } else {

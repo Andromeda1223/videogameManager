@@ -17,7 +17,7 @@ public class PlayStation implements Iconsola {
 
     @Override
     public void installGame(videojuego game) {
-        if (game.consola == Consolas.PS5) {
+        if (game.consola.contains(Consolas.PS5)) {
             System.out.println("INSTALANDO " + game.titulo + " PORFAVOR ESPERE");
             juegosInstaladosPs5.add(game);
         } else {
