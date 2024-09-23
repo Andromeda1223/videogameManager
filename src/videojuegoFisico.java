@@ -1,9 +1,10 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class videojuegoFisico extends videojuego {
 private double gastos = 5;
 
-    public videojuegoFisico(String titulo, Consolas consola, double precio, Generos genero) {
+    public videojuegoFisico(String titulo, Consolas consola, double precio, List<Generos> genero) {
         super(titulo, consola, precio, genero);
     }
 

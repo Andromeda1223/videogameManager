@@ -1,11 +1,12 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public abstract class videojuego {
     public String titulo;
     public Consolas consola;
     public double precio;
-    public Generos genero;
+    public List<Generos> genero;
 
 public void SetTitulo(String titulo) {
     this.titulo = titulo;
@@ -16,7 +17,7 @@ public void SetConsola(Consolas consola) {
 public void SetPrecio(double precio) {
     this.precio = precio;
 }
-public void SetGeneros(Generos generos) {
+public void SetGeneros(List<Generos> generos) {
     this.genero = genero;
 }
 
@@ -34,7 +35,7 @@ public void SetGeneros(Generos generos) {
     }
 
     public abstract double calcularPrecio();
-public videojuego(String titulo, Consolas consola, double precio, Generos genero) {
+public videojuego(String titulo, Consolas consola, double precio, List<Generos> genero) {
     this.titulo = titulo;
     this.consola = consola;
     this.precio = precio;
