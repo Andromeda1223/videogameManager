@@ -1,6 +1,7 @@
 import error.JuegoNoCompatible;
 
 import java.io.*;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -8,6 +9,7 @@ public class PlayStation implements Iconsola {
     public ArrayList<videojuego> juegosInstaladosPs5 = new ArrayList<>();
     public static final String SEPARATOR = ";";
     public static final String QUOTE = "\"";
+    String sFichero = "C:/Users/josmedsol/IdeaProjects/videogameManager-main/PlayStation.csv";
 
     @Override
     public void switchOn() {
@@ -48,44 +50,52 @@ public class PlayStation implements Iconsola {
 
     public void escribirCSV() throws IOException {
         BufferedReader br = null;
-        String sFichero = "C:/Users/josmedsol/IdeaProjects/videogameManager-main/PlayStation.csv";
-        br = new BufferedReader(new FileReader(sFichero));
-        String line = br.readLine();
+
+
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(sFichero));
 
-            // Escribimos 10 filas
-           bw.append(juegosInstaladosPs5.toString().strip());
-
-            bw.append('\n');
-            bw.flush();
-           /* bw.write(test1.toString());
-            bw.write(test2.toString());
-*/
+            // Escribimos
+            for (int i = 0; i < juegosInstaladosPs5.size(); i++) {
+                bw.append(juegosInstaladosPs5.get(i).toString());
+                bw.append('\n');
+                bw.flush();
+            }
             // Hay que cerrar el fichero
             bw.close();
         } catch (IOException ioe) {
             ioe.printStackTrace();
-
         }
-        try {
 
+    }
+
+    public void leerCSV() throws IOException {
+
+        BufferedReader br = null;
+        try {
+            br = new BufferedReader(new FileReader(sFichero));
+            String line = br.readLine();
 
             while (null != line) {
-                String[] fields = line.split(SEPARATOR);
+                String[] datos = line.split(SEPARATOR);
 
 
+                //Debug
+
+
+                for (int i = 0; i < datos.length; i++) {
+                    System.out.println(datos[i]);
+                }
 
                 line = br.readLine();
             }
 
-        } catch (Exception e) {
-
+        } catch (Exception ioe) {
+            ioe.printStackTrace();
         } finally {
             if (null != br) {
                 br.close();
             }
         }
     }
-
 }

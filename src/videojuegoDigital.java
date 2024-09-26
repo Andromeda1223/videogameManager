@@ -6,11 +6,13 @@ public class videojuegoDigital extends videojuego {
 
     public videojuegoDigital(String titulo, List<Consolas> consola, double precio, List<Generos> genero) {
         super(titulo, consola, precio, genero);
+        calcularPrecio();
     }
 
 
     @Override
     public double calcularPrecio() {
-        return precio - descuento;
+
+        return SetPrecio(precio - 5);
     }
 }
