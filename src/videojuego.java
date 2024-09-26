@@ -49,11 +49,12 @@ public abstract class videojuego {
 
     @Override
     public String toString() {
+        //String generos = new String();
         return
-                "titulo," + titulo + ";" +
-                        " consolas," + consola + ";" +
-                        " precio," + precio + ";" +
-                        " generos," + genero + ";"
+                  titulo +
+                        ";" + consola +
+                        ";" + precio +
+                        ";" + genero
                 ;
     }
 }

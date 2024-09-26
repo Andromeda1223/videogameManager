@@ -23,8 +23,8 @@ public class Main {
         List<Consolas> consolasTest3 = Arrays.asList(Consolas.XBOX);
 
         //Inicializar juegos
-        videojuegoFisico test1 = new videojuegoFisico("Test1", consolasTest1, 60, generosTest1);
-        videojuegoDigital test2 = new videojuegoDigital("Test2", consolasTest2, 60, generosTest2);
+        videojuegoFisico test1 = new videojuegoFisico("The last of us", consolasTest1, 60, generosTest1);
+        videojuegoDigital test2 = new videojuegoDigital("De last sofas", consolasTest2, 60, generosTest2);
         videojuegoFisico test3 = new videojuegoFisico("Test3", consolasTest3, 60, generosTest3);
 
         //Inicializar consolas
