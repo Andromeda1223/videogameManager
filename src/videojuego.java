@@ -8,18 +8,21 @@ public abstract class videojuego {
     public double precio;
     public List<Generos> genero;
 
-public void SetTitulo(String titulo) {
-    this.titulo = titulo;
-}
-public void SetConsola(List<Consolas> consola) {
-    this.consola = consola;
-}
-public void SetPrecio(double precio) {
-    this.precio = precio;
-}
-public void SetGeneros(List<Generos> generos) {
-    this.genero = genero;
-}
+    public void SetTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public void SetConsola(List<Consolas> consola) {
+        this.consola = consola;
+    }
+
+    public void SetPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    public void SetGeneros(List<Generos> generos) {
+        this.genero = genero;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -35,22 +38,22 @@ public void SetGeneros(List<Generos> generos) {
     }
 
     public abstract double calcularPrecio();
-public videojuego(String titulo, List<Consolas> consola, double precio, List<Generos> genero) {
-    this.titulo = titulo;
-    this.consola = consola;
-    this.precio = precio;
-    this.genero = genero;
 
-}
+    public videojuego(String titulo, List<Consolas> consola, double precio, List<Generos> genero) {
+        this.titulo = titulo;
+        this.consola = consola;
+        this.precio = precio;
+        this.genero = genero;
+
+    }
 
     @Override
     public String toString() {
-        return "videojuego "+"\n" +
-                "------" + "\n"+
-                " titulo= " + titulo + "\n" +
-                " consola= " + consola +"\n"+
-                " precio= " + precio+ " €"+"\n"+
-                " genero= " + genero
-                 ;
+        return
+                "titulo=" + titulo + ";" +
+                        " consolas=" + consola + ";" +
+                        " precio=" + precio + ";" +
+                        " generos=" + genero + ";"
+                ;
     }
 }

@@ -1,11 +1,16 @@
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 public class Main {
-    public static void main(String[] args) {
+
+    //Constantes
+    public static final String SEPARATOR = ";";
+    public static final String QUOTE = "\"";
+
+    public static void main(String[] args) throws IOException {
 
 
 //Arrays generos
@@ -15,7 +20,7 @@ public class Main {
 
 //Inicializar juegos
         videojuegoFisico test1 = new videojuegoFisico("Test1", consolasTest1, 60, generosTest1);
-
+        videojuegoDigital test2 = new videojuegoDigital("Test2", consolasTest1, 60, generosTest1);
 
 //Inicializar consolas
 
@@ -23,12 +28,19 @@ public class Main {
         Xbox testConsola2 = new Xbox();
 
 //Pruebas y tests
-        System.out.println(test1);
+
+        testConsola.installGame(test1);
+        //testConsola.escribirCSV();
+        testConsola.installGame(test2);
+        testConsola.escribirCSV();
+        System.out.println(testConsola.juegosInstaladosPs5.toString());
+
+
+        //Prueba csv
+
 
 
     }
-
-    ;
 }
 
 
